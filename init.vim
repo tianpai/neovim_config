@@ -10,10 +10,10 @@ syntax on
 set hlsearch
 set ignorecase
 set hidden
-
+"disable folding
+set nofoldenable  
 filetype plugin on 
-
-
+set termguicolors
 "==== For air-line theme ====
 
 set laststatus=2
@@ -22,6 +22,8 @@ let g:airline#extensions#tabline#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep  = '|'
 
 set showtabline=2
+
+
 
 
 if !exists('g:airline_symbols')
@@ -59,6 +61,7 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'jiangmiao/auto-pairs'
   Plug 'preservim/nerdcommenter'
+  Plug 'preservim/nerdtree'
   Plug 'yggdroot/leaderf'
   Plug 'dense-analysis/ale'
   Plug 'godlygeek/tabular'
@@ -69,5 +72,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'itchyny/vim-cursorword'
 
+  " post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
+  Plug 'EdenEast/nightfox.nvim' 
+  Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
+" :colorscheme nordfox
+colorscheme nord
