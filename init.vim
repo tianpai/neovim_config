@@ -71,6 +71,12 @@ let g:vim_markdown_new_list_item_indent = 2
 "==== for auto pair plugin ====
 au Filetype FILETYPE let b:AutoPairs = {"(":")"}
 
+"=== Prettier
+
+"Allow auto formatting for files on save
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+
 
 "==== key maping ====="
 let mapleader = "'"  
@@ -128,7 +134,7 @@ call plug#begin('~/.vim/plugged')
   " Or build from source code by using yarn: https://yarnpkg.com
   "Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'} 
   
-
+  Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'jiangmiao/auto-pairs'
   Plug 'preservim/nerdcommenter'
   Plug 'preservim/nerdtree'
