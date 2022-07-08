@@ -78,6 +78,13 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
 
+"git blamer
+"
+let g:blamer_enabled = 1
+let g:blamer_delay = 0 
+let g:blamer_show_in_visual_modes = 0
+let g:blamer_prefix = ' > '
+
 "==== key maping ====="
 let mapleader = "'"  
 inoremap jk <ESC>
@@ -157,6 +164,7 @@ call plug#begin('~/.vim/plugged')
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'EdenEast/nightfox.nvim' 
   Plug 'arcticicestudio/nord-vim'
+  Plug 'APZelos/blamer.nvim'
 call plug#end()
 
 " :colorscheme nordfox
